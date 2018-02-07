@@ -1,0 +1,105 @@
+<style>
+    .margin-top-1 {
+      margin-top: 1em;
+    }
+  body {
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 0%;
+  font-family: "Open Sans", sans-serif;
+  background-image: url("http://cdn.wallpapersafari.com/76/25/ZbVEyH.jpg");
+}
+
+  #search_categories{
+    font-size: 13px;
+    padding: 10px 8px 10px 14px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #search_categories .select{
+    width: 120%;
+    background:url('arrow.png') no-repeat;
+    background-position:80% center;
+  }
+
+  #search_categories .select select{
+    background: transparent;
+    line-height: 1;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    width: 120%;
+    position: relative;
+    z-index: 10;
+    font-size: 1em;
+  }
+  </style>
+
+  <div class="panel-body"></div><div class="panel-body"></div>
+	<ul class="nav nav-tabs">
+		<li class="active"><a data-toggle="tab" href="#sectionA"><i
+				class="fa fa-user"></i>Identity Generation</a></li>
+	</ul>
+  {{#if errors}}
+    {{#each errors}}
+    <div class="alert alert-danger" role="alert">{{this.msg}}</div>
+  {{/each}}
+  {{/if}}
+
+  {{#if success}}
+  {{#each success}}
+  <div class="alert alert-success" role="alert">{{this.msg}}</div>
+{{/each}}
+{{/if}}
+	<div class="tab-content">
+		<div id="sectionA" class="tab-pane fade in active">
+        <h1 style="color: white">ProviderChain-IDM</h1>
+			<div class="panel panel-primary margin-top-1">
+				<div class="panel-heading">
+					<h3 class="panel-title">Identity Management</h3>
+					<h6 style='color: orange; font-size: 175%;' id="res"></h6>
+				</div>
+				<div class="panel-body">
+          <form method="POST" action="/register">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<br>  <br> <label
+							for="username">userName:</label> <input type="text" name="username"
+							class="form-control" placeholder="Ex: ust"></input> <br> <label
+							for="password">Password:</label> <input type="text" name="password"
+							class="form-control" placeholder="Ex: Ustglobal.1"></input> <br>
+						<label for="fullIdentity">Full-Identity:</label> <input
+							type="text" name="fullIdentity" class="form-control"
+							placeholder="Ex: USTGlobal"></input> <br> <label for="id">ID:</label>
+						<input type="text" name="id" class="form-control"
+							placeholder="Ex:5521"></input>
+						<div class="panel-body"></div>
+						<div class="search_categories">
+							<div class="select">
+								<select name="search_categories" name="search_categories">
+									<option value="" disabled="disabled" selected="selected">Role of Identity</option>
+									<option value="user">User</option>
+									<option value="entity">Entity</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2"></div>
+					<div class="col-md-12">
+						<div class="col-md-6">
+							<br> <br>
+							<button type="submit" class="btn btn-primary"
+								>Add New Identity</button>
+							<button id="clear" class="btn btn-primary"
+								onclick="App.clearAll()">clearAll</button>
+						</div>
+					</div>
+				</div>
+      </form>
+			</div>
+		</div>
+	</div>

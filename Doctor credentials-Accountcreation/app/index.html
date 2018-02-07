@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ProviderChain-IDM</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+    .margin-top-1 {
+      margin-top: 1em;
+    }
+	body {
+    background-image: url("http://cdn.wallpapersafari.com/76/25/ZbVEyH.jpg");
+   
+	}
+  #search_categories{
+    font-size: 13px;
+    padding: 10px 8px 10px 14px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #search_categories .select{
+    width: 120%;
+    background:url('arrow.png') no-repeat;
+    background-position:80% center;
+  }
+
+  #search_categories .select select{
+    background: transparent;
+    line-height: 1;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    width: 120%;
+    position: relative;
+    z-index: 10;
+    font-size: 1em;
+  }
+  </style>
+  <script src="./app.js"></script>
+</head>
+
+<body>
+   <h1 style="color:white ">ProviderChain-IDM</h1>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#sectionA" ><i class="fa fa-user"></i>Identity Generation</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade in active">
+           <div class="panel panel-primary margin-top-1">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Identity Management</h3>
+						<h6 style='color:orange; font-size:175%;' id="res"></h6>
+                </div>
+                <div class="panel-body">
+				<div  class="col-md-2"></div>
+				<div class="col-md-8">
+				<br> <label for="contractAddress">Contract Address:</label> <input type="text" class="form-control" id="contractAddress" placeholder="create a new contract"></input>							
+				<br> <label for="username">userName:</label> <input type="text" id="username" class="form-control" placeholder="Ex: ust"></input>
+				<br> <label for="password">Password:</label> <input type="text" id="password" class="form-control" placeholder="Ex: Ustglobal.1"></input>
+				<br> <label for="fullIdentity">Full-Identity:</label> <input type="text" id="fullIdentity" class="form-control" placeholder="Ex: USTGlobal"></input>									
+                <br> <label for="id">ID:</label> <input type="text" id="id" class="form-control" placeholder="Ex:5521"></input>
+				<div class="panel-body"></div>
+				<div class="search_categories">
+                <div class="select">
+				  <select  name="search_categories" id="search_categories">
+					 <option value="" disabled="disabled" selected="selected">Role of Identity</option>
+					<option value="user">User</option>
+					<option value="entity">Entity</option>		
+				  </select>
+				</div></div>
+				   </div>	<div  class="col-md-2"></div>
+				   <div  class="col-md-12">
+				   
+							<div class="col-md-6">
+                           <br> <br>
+                              <button id="createContract" class="btn btn-primary" onclick="App.createContract()">Create New Contract</button>
+                            </div>
+							<div class="col-md-6">   
+                           <br> <br>
+                        
+                             <button id="addNewAccount" class="btn btn-primary" onclick="App.addNewAccount()">Add New Identity</button>
+							  <button id="clear" class="btn btn-primary" onclick="App.clearAll()">clearAll</button>
+							</div>
+                  </div>
+                </div>
+            </div> 
+        </div>                        
+    </div>   
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</html>

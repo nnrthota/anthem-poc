@@ -1,0 +1,50 @@
+
+			   .brand{
+		       background-color: #f4511e;
+		            }
+		.userimage{
+		       margin-bottom:0px;
+			    padding:25px;
+
+		     }
+			 .chatimage{
+			 margin-top:30px;
+			 padding:25px;
+			  display :none;
+			 }			
+		   #userForm{
+				padding:20px;
+			    border: 3px solid orange;
+		   }
+			footer {
+				 background-color: #f4511e;
+				 color:#fff;
+			   }
+			.nath1
+			{
+			border-top:1.5px solid #fff;
+			color:#ffff80;
+			}
+				.nath2{
+				text-align:right;
+				list-style:none;
+				}
+				.nath2 li
+				{
+				display:inline;
+				padding:0px 5px;
+				}
+				.nath2 li:not(:first-child):before
+				{
+					content:'|';
+					padding:0px 10px;
+				}
+				.nath2 a
+				{
+					color:#ffff00;
+				}
+				.nath2 a:hover
+				{
+					color:#fff;
+					text-decoration: none;
+				}

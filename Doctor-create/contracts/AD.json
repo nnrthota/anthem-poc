@@ -1,0 +1,59 @@
+pragma solidity ^0.4.6;
+
+contract AD
+
+{
+ 
+    struct Doctor{
+        string firstName;
+        uint SSN;
+        uint phoneNumber;
+        string email;
+        string specialty1;
+        string address1;
+        string currentStatus;
+        uint createDate;
+        uint updateDate;
+    }
+    
+    mapping(uint => Doctor) Total;
+    uint8 Count=0;
+
+    function addNewDoctor(string firstName,uint SSN,uint phoneNumber, string specialty1, string address1, string currentStatus) 
+    {
+       
+        Doctor memory newDoctor;
+        newDoctor.firstName= firstName;
+        newDoctor.SSN= SSN;
+        newDoctor.phoneNumber= phoneNumber;
+        newDoctor.specialty1= specialty1;
+        newDoctor.address1= address1;
+        newDoctor.currentStatus= currentStatus;
+        newDoctor.createDate = now;
+        newDoctor.updateDate = now;
+        Total[Count] = newDoctor;
+        Count++;
+        
+    }
+    
+    function updateDoctor(uint8 CountNo,uint phoneNumber,string address1,string currentStatus)  
+    {
+  
+    
+        Total[CountNo].phoneNumber= phoneNumber;
+        Total[CountNo].address1= address1;
+        Total[CountNo].currentStatus= currentStatus; 
+        Total[CountNo].updateDate = now;
+    
+    }
+    
+    
+    function GetCount() returns(uint8){
+        return Count;
+    }
+
+    function getDoctor(uint8 CountNo) returns (string,uint,uint,string,string,string,string)
+    {
+        return (Total[CountNo].firstName,Total[CountNo].SSN,Total[CountNo].phoneNumber,Total[CountNo].email,Total[CountNo].specialty1,Total[CountNo].address1,Total[CountNo].currentStatus );
+    }
+}
